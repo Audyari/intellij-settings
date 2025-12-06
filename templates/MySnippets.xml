@@ -128,4 +128,27 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="21.ifelse" value="if ($CONDITION$) {&#10;    // kode dijalankan jika kondisi bernilai true&#10;    $END$     } else {&#10;    // kode dijalankan jika kondisi bernilai false&#10;}" description="Membuat struktur kondisi if-else" toReformat="false" toShortenFQNames="true">
+    <variable name="CONDITION" expression="umur &gt; 17" defaultValue="umur &gt; 17" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="22.ifonly" value="if ($CONDITION$) {&#10;    $END$     }" description="Membuat struktur kondisi if (tanpa else)" toReformat="false" toShortenFQNames="true">
+    <variable name="CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="23.toggle" value="$VAR$ = !$VAR$;&#10;$END$     " description="Membalik nilai boolean (true jadi false, false jadi true)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;boolean&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="24.booleanex" value="// --- Contoh Logika Boolean di Java ---&#10;&#10;// 1. Deklarasi&#10;boolean isLearner = true;&#10;boolean isFinished = false;&#10;&#10;// 2. Operator Perbandingan (hasilnya selalu boolean)&#10;int a = 5;&#10;int b = 10;&#10;boolean aLebihBesar = (a &gt; b); // false&#10;&#10;// 3. Operator Logika&#10;boolean kondisi1 = true;&#10;boolean kondisi2 = false;&#10;&#10;// AND (&amp;&amp;): true jika kedua-duanya true&#10;boolean hasilAND = kondisi1 &amp;&amp; kondisi2; // false&#10;&#10;// OR (||): true jika salah satunya true&#10;boolean hasilOR = kondisi1 || kondisi2;  // true&#10;&#10;// NOT (!): membalik nilai&#10;boolean hasilNOT = !kondisi1;           // false&#10;&#10;// 4. Penggunaan dalam if-else&#10;if (isLearner &amp;&amp; !isFinished) {&#10;    System.out.println(&quot;Terus belajar!&quot;);&#10;}&#10;&#10;// --- Akhir dari contoh ---&#10;$END$     " description="Menampilkan contoh operator dan logika boolean" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
