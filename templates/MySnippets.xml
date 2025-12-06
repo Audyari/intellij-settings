@@ -1,0 +1,41 @@
+<templateSet group="MySnippets">
+  <template name="1.soutd" value="System.out.println(&quot;DEBUG: $MSG$ = &quot;);&#10;$END$     " description="System.out.println with debug message" toReformat="false" toShortenFQNames="true">
+    <variable name="MSG" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="2.intv" value="int $VAR_NAME$ = $VALUE$;&#10;$END$     " description="Mendeklarasikan variabel integer baru" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="0" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="3.readint" value="int $VAR_NAME$ = Integer.parseInt(IO.readln(&quot;Masukkan angka: &quot;));&#10;$END$     " description="Membaca input integer dari user (Java 22+)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="4.dblv" value="double $VAR_NAME$ = $VALUE$;&#10;$END$     " description="Mendeklarasikan variabel double (angka desimal)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="0.0" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="5.readdbl" value="double $VAR_NAME$ = Double.parseDouble(IO.readln(&quot;Masukkan angka desimal: &quot;));&#10;$END$     " description="Membaca input double dari user (Java 22+)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="6.floatv" value="float $VAR_NAME$ = $VALUE$f;&#10;$END$     " description="Mendeklarasikan variabel float (angka desimal presisi rendah)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="0.0" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
