@@ -38,7 +38,7 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="7.strv" value="String $VAR_NAME$ = &quot;$VALUE$&quot;;&#10;$END$     " description="Mendeklarasikan variabel String (teks)" toReformat="false" toShortenFQNames="true">
+  <template name="7.strv" value="String $VAR_NAME$ = &quot;$VALUE$&quot;;&#10;$END$      " description="Mendeklarasikan variabel String (teks)" toReformat="false" toShortenFQNames="true">
     <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -60,6 +60,57 @@
     </context>
   </template>
   <template name="10.literalex" value="// --- Contoh Literals di Java ---&#10;&#10;// 1. Integer Literals (angka bulat)&#10;int angkaBulat = 123;&#10;int angkaNegatif = -45;&#10;&#10;// 2. Floating-Point Literals (angka desimal)&#10;double pi = 3.14;&#10;double sainsNotasi = 1.25e-4; // sama dengan 0.000125&#10;&#10;// 3. Character Literals (karakter tunggal, pakai tanda kutip satu)&#10;char huruf = 'A';&#10;char simbol = '#';&#10;&#10;// 4. String Literals (teks, pakai tanda kutip dua)&#10;String nama = &quot;IntelliJ IDEA&quot;;&#10;String kalimat = &quot;Ini adalah sebuah kalimat.&quot;;&#10;&#10;// 5. Boolean Literals (hanya ada dua nilai)&#10;boolean isActive = true;&#10;boolean isFinished = false;&#10;&#10;// 6. Null Literal (berarti &quot;tidak ada objek&quot;)&#10;String kosong = null;&#10;&#10;// --- Akhir dari contoh ---&#10;$END$     " description="Menampilkan contoh semua jenis literals" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="11.large" value="long $VAR_NAME$ = 1_000_000_000L;&#10;$END$     ```&#10;**Penjelasan:**&#10;*   `$VAR_NAME$`: Variabel untuk nama variabel.&#10;*   `1_000_000_000`: Contoh angka satu miliar dengan underscore.&#10;*   `L`: Huruf `L` di akhir **wajib** untuk menandai bahwa ini adalah angka bertipe `long`, bukan `int`. Snippet ini sudah menyertakannya." description="Membuat variabel long untuk angka yang sangat besar (mudah dibaca)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="12.castint" value="int $INT_VAR$ = (int) $SOURCE_VAR$;&#10;$END$     " description="Mengkonversi tipe data lain (misal double) ke int" toReformat="false" toShortenFQNames="true">
+    <variable name="INT_VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="SOURCE_VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="13.underscoreex" value="// --- Contoh Penggunaan Underscore di Java ---&#10;&#10;// 1. Pemisah Angka (Numeric Literals) - Java 7+&#10;// Membuat angka besar lebih mudah dibaca.&#10;long satuMiliar = 1_000_000_000L;&#10;long nomorKartuKredit = 1234_5678_9012_3456L;&#10;double pi = 3.141_592_653;&#10;&#10;// 2. Variabel Buangan (Discard Variable) - Java 21+&#10;// Menandai bahwa sebuah nilai sengaja tidak digunakan.&#10;&#10;// Contoh di try-with-resources:&#10;// Kita hanya butuh side-effect dari membuat resource, bukan resource-nya.&#10;try (var _ = new SomeAutoCloseableResource()) {&#10;    System.out.println(&quot;Kode di dalam blok try dijalankan.&quot;);&#10;}&#10;&#10;// Contoh di Pattern Matching (jika sudah support):&#10;// if (point instanceof Point(int x, int _)) {&#10;//     System.out.println(&quot;Hanya koordinat x yang penting: &quot; + x);&#10;// }&#10;&#10;// --- Akhir dari contoh ---&#10;$END$     " description="Menampilkan contoh penggunaan underscore di Java" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="14.parseint" value="int $VAR_NAME$ = Integer.parseInt($STRING_VAR$);&#10;$END$     " description="Mengkonversi String ke int" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING_VAR" expression="variableOfType(&quot;java.lang.String&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="15.parsedbl" value="double $VAR_NAME$ = Double.parseDouble($STRING_VAR$);&#10;$END$     " description="Mengkonversi String ke double" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING_VAR" expression="variableOfType(&quot;java.lang.String&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="16.inttostr" value="String $STR_VAR$ = String.valueOf($INT_VAR$);&#10;$END$     " description="Mengkonversi int ke String" toReformat="false" toShortenFQNames="true">
+    <variable name="STR_VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="INT_VAR" expression="variableOfType(&quot;int&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="17.dbltostr" value="String $STR_VAR$ = String.valueOf($DBL_VAR$);&#10;$END$     " description="Mengkonversi double ke String" toReformat="false" toShortenFQNames="true">
+    <variable name="STR_VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DBL_VAR" expression="variableOfType(&quot;double&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="18.convex" value="// --- Contoh Konversi Tipe Data Number di Java ---&#10;&#10;// 1. Widening (Melebar) - OTOMATIS, aman&#10;int nilaiInt = 100;&#10;double nilaiDouble = nilaiInt; // int otomatis menjadi 100.0&#10;&#10;// 2. Narrowing (Menyempit) - MANUAL, ada risiko kehilangan data&#10;double harga = 99.99;&#10;int hargaBulat = (int) harga; // Hasilnya akan menjadi 99 (desimal dibuang)&#10;&#10;// 3. String ke Number (Parsing)&#10;String angkaString = &quot;250&quot;;&#10;int angkaInt = Integer.parseInt(angkaString);&#10;&#10;String desimalString = &quot;3.14&quot;;&#10;double angkaDouble = Double.parseDouble(desimalString);&#10;&#10;// 4. Number ke String&#10;int usia = 30;&#10;String usiaString = String.valueOf(usia); // Cara yang direkomendasikan&#10;&#10;double pi = 3.14159;&#10;String piString = Double.toString(pi);     // Cara alternatif&#10;&#10;// --- Akhir dari contoh ---&#10;$END$     " description="Menampilkan contoh semua jenis konversi tipe data" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
