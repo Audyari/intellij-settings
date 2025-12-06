@@ -38,4 +38,30 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="7.strv" value="String $VAR_NAME$ = &quot;$VALUE$&quot;;&#10;$END$     " description="Mendeklarasikan variabel String (teks)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="8.charv" value="char $VAR_NAME$ = '$VALUE$';&#10;$END$     " description="Mendeklarasikan variabel char (karakter tunggal)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="9.boolv" value="boolean $VAR_NAME$ = $VALUE$;&#10;$END$     " description="Mendeklarasikan variabel boolean (true/false)" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="false" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="10.literalex" value="// --- Contoh Literals di Java ---&#10;&#10;// 1. Integer Literals (angka bulat)&#10;int angkaBulat = 123;&#10;int angkaNegatif = -45;&#10;&#10;// 2. Floating-Point Literals (angka desimal)&#10;double pi = 3.14;&#10;double sainsNotasi = 1.25e-4; // sama dengan 0.000125&#10;&#10;// 3. Character Literals (karakter tunggal, pakai tanda kutip satu)&#10;char huruf = 'A';&#10;char simbol = '#';&#10;&#10;// 4. String Literals (teks, pakai tanda kutip dua)&#10;String nama = &quot;IntelliJ IDEA&quot;;&#10;String kalimat = &quot;Ini adalah sebuah kalimat.&quot;;&#10;&#10;// 5. Boolean Literals (hanya ada dua nilai)&#10;boolean isActive = true;&#10;boolean isFinished = false;&#10;&#10;// 6. Null Literal (berarti &quot;tidak ada objek&quot;)&#10;String kosong = null;&#10;&#10;// --- Akhir dari contoh ---&#10;$END$     " description="Menampilkan contoh semua jenis literals" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
