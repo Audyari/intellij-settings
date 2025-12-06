@@ -115,4 +115,17 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="19.charutils" value="char karakter = $CHAR$;&#10;&#10;// --- Contoh Penggunaan Class Character ---&#10;&#10;// 1. Memeriksa tipe karakter&#10;boolean adalahDigit = Character.isDigit(karakter);&#10;boolean adalahHuruf = Character.isLetter(karakter);&#10;boolean adalahSpasi = Character.isWhitespace(karakter);&#10;&#10;// 2. Mengubah huruf besar/kecil&#10;char hurufBesar = Character.toUpperCase(karakter);&#10;char hurufKecil = Character.toLowerCase(karakter);&#10;&#10;// 3. Mendapatkan nilai numerik (jika karakter adalah angka)&#10;int nilaiAngka = Character.getNumericValue(karakter);&#10;&#10;// --- Akhir dari contoh ---&#10;$END$     " description="Menampilkan contoh penggunaan method dari class Character" toReformat="false" toShortenFQNames="true">
+    <variable name="CHAR" expression="" defaultValue="'A'" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="20.forchar" value="for (char $CHAR_VAR$ : $STRING_VAR$.toCharArray()) {&#10;    $END$     }" description="Iterasi setiap karakter dalam sebuah String" toReformat="false" toShortenFQNames="true">
+    <variable name="CHAR_VAR" expression="c" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING_VAR" expression="variableOfType(&quot;java.lang.String&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
