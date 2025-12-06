@@ -161,4 +161,26 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="26.sb" value="StringBuilder sb = new StringBuilder();&#10;sb.append($PART1$);&#10;sb.append(&quot; &quot;); // Menambahkan spasi&#10;sb.append($PART2$);&#10;String $RESULT$ = sb.toString();&#10;$END$     " description="Menggabungkan string dengan StringBuilder (efisien)" toReformat="false" toShortenFQNames="true">
+    <variable name="PART1" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="PART2" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="RESULT" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="27.formatstr" value="String $RESULT$ = String.format(&quot;$TEMPLATE$&quot;, $VAR1$, $VAR2$);&#10;$END$     " description="Menggabungkan string dengan format template (rapih)" toReformat="false" toShortenFQNames="true">
+    <variable name="RESULT" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEMPLATE" expression="&quot;Nama: %s, Umur: %d&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR2" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="28.concatex" value="// --- Cara Menggabungkan String di Java ---&#10;&#10;String nama = &quot;Alice&quot;;&#10;int umur = 25;&#10;&#10;// 1. Operator + (Plus)&#10;// Gunakan untuk menggabungkan sedikit string. Mudah dibaca.&#10;// KURANG EFEKTIF untuk penggabungan dalam loop yang besar.&#10;String kalimat1 = &quot;Nama saya &quot; + nama + &quot; dan umurku &quot; + umur + &quot; tahun.&quot;;&#10;&#10;// 2. String.concat()&#10;// Sama seperti operator +, tapi hanya bisa untuk String.&#10;String kalimat2 = &quot;Nama saya &quot;.concat(nama);&#10;&#10;// 3. String.format() (Direkomendasikan untuk template)&#10;// Sangat rapih dan mudah dibaca untuk string yang kompleks.&#10;// %s untuk String, %d untuk digit/angka, %f untuk desimal.&#10;String kalimat3 = String.format(&quot;Nama: %s, Umur: %d tahun.&quot;, nama, umur);&#10;&#10;// 4. StringBuilder (Paling Cepat &amp; Efisien)&#10;// WAJIB digunakan jika menggabungkan string di dalam loop.&#10;// Paling hemat memori.&#10;StringBuilder sb = new StringBuilder();&#10;sb.append(&quot;Nama: &quot;).append(nama)&#10;  .append(&quot;, Umur: &quot;).append(umur)&#10;  .append(&quot; tahun.&quot;);&#10;String kalimat4 = sb.toString();&#10;&#10;// --- Kesimpulan ---&#10;// - Untuk sederhana: pakai operator +&#10;// - Untuk template rapih: pakai String.format()&#10;// - Untuk performa/loop: pakai StringBuilder&#10;$END$     " description="Menampilkan semua cara menggabungkan String dan kapan memakainya" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
