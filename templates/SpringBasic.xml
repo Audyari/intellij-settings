@@ -9,4 +9,14 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="spring3.singleton" value="package programmer_zaman_now.belajar_spring_dasar;&#10;&#10;public class Database {&#10;&#10;    private Database() {&#10;        // Private constructor&#10;    }&#10;&#10;    /**&#10;     * The inner class is not loaded until getInstance() is called.&#10;     * This provides lazy-loading and is thread-safe by the JVM.&#10;     */&#10;    private static class SingletonHolder {&#10;        private static final Database INSTANCE = new Database();&#10;    }&#10;&#10;    public static Database getInstance() {&#10;        return SingletonHolder.INSTANCE;&#10;    }&#10;}&#10;&#10;package programmer_zaman_now.belajar_spring_dasar;&#10;&#10;import org.junit.jupiter.api.Assertions;&#10;import org.junit.jupiter.api.Test;&#10;import org.springframework.context.annotation.AnnotationConfigApplicationContext;&#10;&#10;&#10;public class AplicationContextTest {&#10;&#10;@Test&#10;void testSingletonDatabase(){&#10;    Database database1 = Database.getInstance();&#10;    Database database2 = Database.getInstance();&#10;&#10;    Assertions.assertSame(database1, database2);&#10;&#10;}" description="Creates a thread-safe Singleton class (Initialization-on-demand Holder Idiom)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="spring4.compdanbean" value="package programmer_zaman_now.belajar_spring_dasar;&#10;&#10;import org.springframework.context.annotation.Bean;&#10;import org.springframework.stereotype.Component;&#10;&#10;@Component&#10;public class MyService {&#10;&#10;    // Add your business logic here&#10;    @Bean&#10;    public MyService myService() {&#10;        // You can add complex initialization logic here&#10;        return new MyService();&#10;    }&#10;}&#10;" description="Creates a Spring Component class dan Creates a Spring Bean method inside a @Configuration class" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
